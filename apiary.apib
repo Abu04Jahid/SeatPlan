@@ -1,0 +1,113 @@
+FORMAT: 1A
+HOST: http:localhost:3000/seat_plans
+
+# SeatPlan API
+
+SeatPlan API is a API where student can get info about seat plans in admission test. .
+
+## Flow the following instruction for using the api.
+
+####1.Make sure you have installed rails properly on your device.
+####2.Download or clone the code from git@github.com:Abu04Jahid/SeatPlan.git
+####3.Open a command window at the place where the api is downloaded.
+####4.Then run 'bundle install' command.
+####5.Then run 'rails db:migrate RAILS_ENV=development'command.
+####6.After that run 'rails server'command.
+####7.Now open postman for doing the operation get/post/patch/delete.
+####8.Write http://localhost:3000/seat_plans and send your request.
+
+## Details examples are given bellow.
+
+## Questions Collection [/questions]
+
+### List of all student  [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+            "id": 1,
+            "building_name": "4th science",
+            "floor_no": "2nd floor",
+            "room_no": "222",
+            "specific_seat_no": "32",
+            "created_at": "2017-07-23T03:07:35.874Z",
+            "updated_at": "2017-07-23T18:26:55.895Z"
+            }
+        ]
+
+### Add new student info [POST]
+
+Admin can add new student info usnig this option.
+
++ Request (application/json)
+
+        {
+           "id": 2,
+           "building_name": "4th science",
+           "floor_no": "2nd floor",
+           "room_no": "221",
+           "specific_seat_no": "22",
+           "created_at": "2017-07-23T04:33:26.106Z",
+           "updated_at": "2017-07-23T18:27:19.971Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: http://localhost:3000/seat_plans/2
+
+    + Body
+
+            {
+                "id": 2,
+                "building_name": "4th science",
+                "floor_no": "2nd floor",
+                "room_no": "221",
+                "specific_seat_no": "22",
+                "created_at": "2017-07-23T04:33:26.106Z",
+                "updated_at": "2017-07-23T18:27:19.971Z"
+            }
+### Update a Seat Plans info [PUT]
+
+Admin can add new Students info usnig this option.
+
++ Request (application/json)
+
+        {
+             "id": 2,
+             "building_name": "4th science",
+             "floor_no": "2nd floor",
+             "room_no": "221",
+             "specific_seat_no": "22",
+             "created_at": "2017-07-23T04:33:26.106Z",
+             "updated_at": "2017-07-23T18:27:19.971Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: http://localhost:3000/seat_plans/2
+
+    + Body
+
+            {
+            "id": 2,
+            "building_name": "4th science",
+            "floor_no": "2nd floor",
+            "room_no": "221",
+            "specific_seat_no": "22",
+            "created_at": "2017-07-23T04:33:26.106Z",
+            "updated_at": "2017-07-23T18:27:19.971Z"
+            }
+### Delete a Students info [DELETE]
+
+Admin can Delete a Students info usnig this option.
+
++ Request (application/json)
+
+        Location: http://localhost:3000/seat_plans/2
+        
++ Response 201 (application/json)
